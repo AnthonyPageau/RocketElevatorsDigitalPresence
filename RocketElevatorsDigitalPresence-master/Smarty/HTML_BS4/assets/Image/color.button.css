@@ -1,0 +1,11 @@
+.btn-warning1 {
+  color: #212529;
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-warning1:hover {
+  color: #212529;
+  background-color: #ff000075;
+  border-color: #da0b0b7a;
+}
