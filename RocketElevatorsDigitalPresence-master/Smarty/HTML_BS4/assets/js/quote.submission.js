@@ -23,14 +23,17 @@ $("#Tenant").hide();
  
 
 $("#Building").on("change",function () {
-
     var Type = $("#Building option:selected").val();
     
     if(Type=="Residential"){
+    
         $("#Apartment").show();
+        $("#ApartmentValue").val("");
         $("#Business").hide();
         $("#Floor").show();
+        $("#FloorValue").val("");
         $("#Basement").show();
+        $("#BasementValue").val("");
         $("#Parking").hide();
         $("#Cage").hide();
         $("#Occupant").hide();
@@ -49,6 +52,8 @@ $("#Building").on("change",function () {
         $("#TotalCost1").hide();
         $("#TotalCost2").hide();
         $("#Tenant").hide();
+      
+        
 
             
 
@@ -57,12 +62,18 @@ $("#Building").on("change",function () {
 };
              
     if(Type=="Commercial"){
+    
         $("#Apartment").hide();
         $("#Business").show();
+        $("#BusinessValue").val("");
         $("#Floor").show();
+        $("#FloorValue").val("");
         $("#Basement").show();
+        $("#BasementValue").val("");
         $("#Parking").show();
+        $("#ParkingValue").val("");
         $("#Cage").show();
+        $("#CageValue").val("");
         $("#Occupant").hide();
         $("#Hour").hide();
         $("#Recommended").hide();
@@ -79,16 +90,23 @@ $("#Building").on("change",function () {
         $("#TotalCost1").show();
         $("#TotalCost2").hide();
         $("#Tenant").hide();
+      
+
            
 };    
     if(Type=="Corporate"){
+      
         $("#Apartment").hide();
         $("#Business").hide();
         $("#Floor").show();
+        $("#FloorValue").val("");
         $("#Basement").show();
+        $("#BasementValue").val("");
         $("#Parking").show();
+        $("#ParkingValue").val("");
         $("#Cage").hide();
         $("#Occupant").show();
+        $("#OccupantValue").val("");
         $("#Hour").show();
         $("#Recommended").hide();
         $("#Recommended1").hide();
@@ -104,16 +122,22 @@ $("#Building").on("change",function () {
         $("#TotalCost1").hide();
         $("#TotalCost2").show();
         $("#Tenant").show();
+     
    
 };  
     if(Type=="Hybrid"){
+ 
         $("#Apartment").hide();
         $("#Business").hide();
         $("#Floor").show();
+        $("#FloorValue").val("");
         $("#Basement").show();
+        $("#BasementValue").val("");
         $("#Parking").show();
+        $("#ParkingValue").val("");
         $("#Cage").hide();
         $("#Occupant").show();
+        $("#OccupantValue").val("");
         $("#Hour").show();
         $("#Recommended").hide();
         $("#Recommended1").hide();
@@ -129,8 +153,10 @@ $("#Building").on("change",function () {
         $("#TotalCost1").hide();
         $("#TotalCost2").show();
         $("#Tenant").show();
+    
 };
     if(Type=="Select"){
+       
         $("#Apartment").hide();
         $("#Business").hide();
         $("#Floor").hide();
@@ -153,6 +179,7 @@ $("#Building").on("change",function () {
         $("#TotalCost1").hide();
         $("#TotalCost2").hide();
         $("#Tenant").hide();
+       
 
 };        
 });
@@ -288,3 +315,7 @@ $("input").on('change keyup click',function () {
         totalcost();
         }             
     });
+
+function clear(){
+    document.getElementById("Quote").reset();
+}
