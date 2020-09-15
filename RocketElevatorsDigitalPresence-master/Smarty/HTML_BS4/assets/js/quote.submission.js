@@ -111,18 +111,22 @@ $("#Building").on("change",function () {
         $("#Recommended").hide();
         $("#Recommended1").hide();
         $("#Recommended2").show();
+        $("#RecommendedValue2").val("");
         $("#Product").show();
         $("#CostPerCage").hide();
         $("#CostPerCage1").hide();
         $("#CostPerCage2").show();
+        $("#CostPerCageValue2").show();
+        $("#CostPerCageValue2").val("");
         $("#InstallCageCost").hide();
         $("#InstallCageCost1").hide();
         $("#InstallCageCost2").show();
+        $("#InstallCageCostValue2").val("");
         $("#TotalCost").hide();
         $("#TotalCost1").hide();
         $("#TotalCost2").show();
+        $("#TotalCostValue2").val("");
         $("#Tenant").show();
-     
    
 };  
     if(Type=="Hybrid"){
@@ -142,16 +146,20 @@ $("#Building").on("change",function () {
         $("#Recommended").hide();
         $("#Recommended1").hide();
         $("#Recommended2").show();
+        $("#RecommendedValue2").val("");
         $("#Product").show();
         $("#CostPerCage").hide();
         $("#CostPerCage1").hide();
         $("#CostPerCage2").show();
+        $("#CostPerCageValue2").val("");
         $("#InstallCageCost").hide();
         $("#InstallCageCost1").hide();
         $("#InstallCageCost2").show();
+        $("#InstallCageCostValue2").val("");
         $("#TotalCost").hide();
         $("#TotalCost1").hide();
         $("#TotalCost2").show();
+        $("#TotalCostValue2").val("");
         $("#Tenant").show();
     
 };
@@ -204,7 +212,7 @@ var Inst1 = document.getElementById("InstallCageCostValue1");
 var Inst2 = document.getElementById("InstallCageCostValue2");
 var Total = document.getElementById("TotalCostValue");
 var Total1 = document.getElementById("TotalCostValue1");
-var Total2 = document.getElementById("TotalCostValue2");
+var Total2 = document.getElementById("TotalCostValue2"); 
 
 function commercial(){
     Reco1.value = Cage.value;
@@ -230,64 +238,45 @@ function totalcost(){
     var prodValue = $("input[name='ProductValue']:checked").val();
         if(prodValue=="7565"){    
             //Residential
-            Cost.value = Reco.value * prodValue; 
-            Inst.value = Cost.value * 0.1;
-            Inst.value = Math.round(Inst.value*100)/100;
-            Total.value = parseInt(Cost.value) + parseInt(Inst.value);
-            Total.value = Math.round(Total.value*100)/100;
+            Cost.value = (Reco.value * prodValue).toFixed(2); 
+            Inst.value = (Cost.value * 0.1).toFixed(2); 
+            Total.value = (parseInt(Cost.value) + parseInt(Inst.value)).toFixed(2);
             //Commerical
-            Cost1.value = Reco1.value * prodValue; 
-            Inst1.value = Cost1.value * 0.1;
-            Inst1.value = Math.round(Inst1.value*100)/100;
-            Total1.value = parseInt(Cost1.value) + parseInt(Inst1.value);
-            Total1.value = Math.round(Total1.value*100)/100;
+            Cost1.value = (Reco1.value * prodValue).toFixed(2); 
+            Inst1.value = (Cost1.value * 0.1).toFixed(2);
+            Total1.value = (parseInt(Cost1.value) + parseInt(Inst1.value)).toFixed(2);
             // Corporate and Hybrid
-            Cost2.value = Reco2.value * prodValue; 
-            Inst2.value = Cost2.value * 0.1;
-            Inst2.value = Math.round(Inst2.value*100)/100;
-            Total2.value = parseInt(Cost2.value) + parseInt(Inst2.value);
-            Total2.value = Math.round(Total2.value*100)/100;
+            Cost2.value = (Reco2.value * prodValue).toFixed(2); 
+            Inst2.value = (Cost2.value * 0.1).toFixed(2);
+            Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
             }
         if(prodValue=="12345"){
-            //Residential
-            Cost.value = Reco.value * prodValue; 
-            Inst.value = Cost.value * 0.13;
-            Inst.value = Math.round(Inst.value*100)/100;
-            Total.value = parseInt(Cost.value) + parseInt(Inst.value);
-            Total.value = Math.round(Total.value*100)/100;
-            Total1.value = Math.round(Total1.value*100)/100;
-            //Commerical
-            Cost1.value = Reco1.value * prodValue; 
-            Inst1.value = Cost1.value * 0.13;
-            Inst1.value = Math.round(Inst1.value*100)/100;
-            Total1.value = parseInt(Cost1.value) + parseInt(Inst1.value);
-            Total1.value = Math.round(Total1.value*100)/100;
-            // Corporate and Hybrid
-            Cost2.value = Reco2.value * prodValue; 
-            Inst2.value = Cost2.value * 0.13;
-            Inst2.value = Math.round(Inst2.value*100)/100;
-            Total2.value = parseInt(Cost2.value) + parseInt(Inst2.value);
-            Total2.value = Math.round(Total2.value*100)/100;
+             //Residential
+             Cost.value = (Reco.value * prodValue).toFixed(2); 
+             Inst.value = (Cost.value * 0.13).toFixed(2); 
+             Total.value = (parseInt(Cost.value) + parseInt(Inst.value)).toFixed(2);
+             //Commerical
+             Cost1.value = (Reco1.value * prodValue).toFixed(2); 
+             Inst1.value = (Cost1.value * 0.13).toFixed(2);
+             Total1.value = (parseInt(Cost1.value) + parseInt(Inst1.value)).toFixed(2);
+             // Corporate and Hybrid
+             Cost2.value = (Reco2.value * prodValue).toFixed(2); 
+             Inst2.value = (Cost2.value * 0.13).toFixed(2);
+             Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
             }
         if(prodValue=="15400"){
-            //Residential
-            Cost.value = Reco.value * prodValue; 
-            Inst.value = Cost.value * 0.16;
-            Inst.value = Math.round(Inst.value*100)/100;
-            Total.value = parseInt(Cost.value) + parseInt(Inst.value);
-            Total.value = Math.round(Total.value*100)/100;
-            //Commerical
-            Cost1.value = Reco1.value * prodValue; 
-            Inst1.value = Cost1.value * 0.16;
-            Inst1.value = Math.round(Inst1.value*100)/100;
-            Total1.value = parseInt(Cost1.value) + parseInt(Inst1.value);
-            Total1.value = Math.round(Total1.value*100)/100;
-            // Corporate and Hybrid
-            Cost2.value = Reco2.value * prodValue; 
-            Inst2.value = Cost2.value * 0.16;
-            Inst2.value = Math.round(Inst2.value*100)/100;
-            Total2.value = parseInt(Cost2.value) + parseInt(Inst2.value);
-            Total2.value = Math.round(Total2.value*100)/100;
+             //Residential
+             Cost.value = (Reco.value * prodValue).toFixed(2); 
+             Inst.value = (Cost.value * 0.16).toFixed(2); 
+             Total.value = (parseInt(Cost.value) + parseInt(Inst.value)).toFixed(2);
+             //Commerical
+             Cost1.value = (Reco1.value * prodValue).toFixed(2); 
+             Inst1.value = (Cost1.value * 0.16).toFixed(2);
+             Total1.value = (parseInt(Cost1.value) + parseInt(Inst1.value)).toFixed(2);
+             // Corporate and Hybrid
+             Cost2.value = (Reco2.value * prodValue).toFixed(2); 
+             Inst2.value = (Cost2.value * 0.16).toFixed(2);
+             Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
             }           
 }
 
@@ -316,6 +305,3 @@ $("input").on('change keyup click',function () {
         }             
     });
 
-function clear(){
-    document.getElementById("Quote").reset();
-}
