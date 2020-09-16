@@ -243,45 +243,72 @@ function totalcost(){
     var prodValue = $("input[name='ProductValue']:checked").val();
         if(prodValue=="7565"){    
             //Residential
-            Cost.value = (Reco.value * prodValue).toFixed(2); 
-            Inst.value = (Cost.value * 0.1).toFixed(2); 
-            Total.value = (parseInt(Cost.value) + parseInt(Inst.value)).toFixed(2);
+            var Co = (Reco.value * prodValue).toFixed(2);
+            Cost.value = "$" + Co;
+            var In = (Co * 0.1).toFixed(2);
+            Inst.value = "$" + In; 
+            var To = (parseInt(Co) + parseInt(In)).toFixed(2);
+            Total.value = "$" + To;
             //Commerical
-            Cost1.value = (Reco1.value * prodValue).toFixed(2); 
-            Inst1.value = (Cost1.value * 0.1).toFixed(2);
-            Total1.value = (parseInt(Cost1.value) + parseInt(Inst1.value)).toFixed(2);
+            var Co1 = (Reco1.value * prodValue).toFixed(2);
+            Cost1.value = "$" + Co1;
+            var In1 = (Co1 * 0.1).toFixed(2);
+            Inst1.value = "$" + In1;
+            var To1 = (parseInt(Co1) + parseInt(In1)).toFixed(2); 
+            Total1.value = "$" + To1;
             // Corporate and Hybrid
-            Cost2.value = (Reco2.value * prodValue).toFixed(2); 
-            Inst2.value = (Cost2.value * 0.1).toFixed(2);
-            Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
+            var Co2 = (Reco2.value * prodValue).toFixed(2);
+            Cost2.value = "$" + Co2
+            var In2 = (Co2 * 0.16).toFixed(2);
+            Inst2.value = "$" + In2 
+            var To2 = (parseInt(Co2) + parseInt(In2)).toFixed(2);
+            Total2.value = "$" + To2
             }
         if(prodValue=="12345"){
-             //Residential
-             Cost.value = (Reco.value * prodValue).toFixed(2); 
-             Inst.value = (Cost.value * 0.13).toFixed(2); 
-             Total.value = (parseInt(Cost.value) + parseInt(Inst.value)).toFixed(2);
-             //Commerical
-             Cost1.value = (Reco1.value * prodValue).toFixed(2); 
-             Inst1.value = (Cost1.value * 0.13).toFixed(2);
-             Total1.value = (parseInt(Cost1.value) + parseInt(Inst1.value)).toFixed(2);
-             // Corporate and Hybrid
-             Cost2.value = (Reco2.value * prodValue).toFixed(2); 
-             Inst2.value = (Cost2.value * 0.13).toFixed(2);
-             Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
+            //Residential
+            var Co = (Reco.value * prodValue).toFixed(2);
+            Cost.value = "$" + Co
+            var In = (Co * 0.13).toFixed(2);
+            Inst.value = "$" + In 
+            var To = (parseInt(Co) + parseInt(In)).toFixed(2);
+            Total.value = "$" + To
+            //Commerical
+            var Co1 = (Reco1.value * prodValue).toFixed(2);
+            Cost1.value = "$" + Co1;
+            var In1 = (Co1 * 0.1).toFixed(2);
+            Inst1.value = "$" + In1;
+            var To1 = (parseInt(Co1) + parseInt(In1)).toFixed(2); 
+            Total1.value = "$" + To1;
+            // Corporate and Hybrid
+            var Co2 = (Reco2.value * prodValue).toFixed(2);
+            Cost2.value = "$" + Co2
+            var In2 = (Co2 * 0.16).toFixed(2);
+            Inst2.value = "$" + In2 
+            var To2 = (parseInt(Co2) + parseInt(In2)).toFixed(2);
+            Total2.value = "$" + To2
             }
         if(prodValue=="15400"){
-             //Residential
-             Cost.value = (Reco.value * prodValue).toFixed(2); 
-             Inst.value = (Cost.value * 0.16).toFixed(2); 
-             Total.value = (parseInt(Cost.value) + parseInt(Inst.value)).toFixed(2);
-             //Commerical
-             Cost1.value = (Reco1.value * prodValue).toFixed(2); 
-             Inst1.value = (Cost1.value * 0.16).toFixed(2);
-             Total1.value = (parseInt(Cost1.value) + parseInt(Inst1.value)).toFixed(2);
-             // Corporate and Hybrid
-             Cost2.value = (Reco2.value * prodValue).toFixed(2); 
-             Inst2.value = (Cost2.value * 0.16).toFixed(2);
-             Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
+            //Residential
+            var Co = (Reco.value * prodValue).toFixed(2);
+            Cost.value = "$" + Co
+            var In = (Co * 0.16).toFixed(2);
+            Inst.value = "$" + In 
+            var To = (parseInt(Co) + parseInt(In)).toFixed(2);
+            Total.value = "$" + To
+            //Commercial
+            var Co1 = (Reco1.value * prodValue).toFixed(2);
+            Cost1.value = "$" + Co1;
+            var In1 = (Co1 * 0.1).toFixed(2);
+            Inst1.value = "$" + In1;
+            var To1 = (parseInt(Co1) + parseInt(In1)).toFixed(2); 
+            Total1.value = "$" + To1;
+            // Corporate and Hybrid
+            var Co2 = (Reco2.value * prodValue).toFixed(2);
+            Cost2.value = "$" + Co2
+            var In2 = (Co2 * 0.16).toFixed(2);
+            Inst2.value = "$" + In2 
+            var To2 = (parseInt(Co2) + parseInt(In2)).toFixed(2);
+            Total2.value = "$" + To2
             }           
 }
 //Function to call the right calculation function depending of the type of building
@@ -309,4 +336,5 @@ $("input").on('change keyup click',function () {
         totalcost();
         }             
     });
+
 
