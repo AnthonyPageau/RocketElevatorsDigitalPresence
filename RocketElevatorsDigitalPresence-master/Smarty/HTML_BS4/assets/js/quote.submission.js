@@ -1,3 +1,4 @@
+//Hide all the cases when the web page start
 $("#Apartment").hide();
 $("#Business").hide();
 $("#Floor").hide();
@@ -21,7 +22,7 @@ $("#TotalCost1").hide();
 $("#TotalCost2").hide();
 $("#Tenant").hide();
  
-
+// Show the required case for each type of build + resetting the input values
 $("#Building").on("change",function () {
     var Type = $("#Building option:selected").val();
     
@@ -191,7 +192,7 @@ $("#Building").on("change",function () {
 
 };        
 });
-
+//Creating all the necessary variables to create our calculation functions
 var Apart = document.getElementById("ApartmentValue");
 var Busi = document.getElementById("BusinessValue");
 var Floor = document.getElementById("FloorValue");
@@ -214,10 +215,12 @@ var Total = document.getElementById("TotalCostValue");
 var Total1 = document.getElementById("TotalCostValue1");
 var Total2 = document.getElementById("TotalCostValue2"); 
 
+//Function ton find the recommended amount of cage for a commercial building
 function commercial(){
     Reco1.value = Cage.value;
 }
 
+//Function ton find the recommended amount of cage for a residential building
 function residential(){
     var AF = Apart.value / Floor.value;
     Cage.value = Math.ceil(AF / 6);
@@ -225,6 +228,7 @@ function residential(){
     Reco.value = Column * Cage.value;
 }
 
+//Function ton find the recommended amount of cage for a corporate or hybrid building
 function corpohybrid(){
     var FB = parseInt(Floor.value) + parseInt(Base.value);
     var OF = Occu.value * Floor.value;
@@ -234,6 +238,7 @@ function corpohybrid(){
     
 }
 
+//Function to calculate de Cost for Elevator, Installation and Total Cost depending of the type of cage chosen
 function totalcost(){
     var prodValue = $("input[name='ProductValue']:checked").val();
         if(prodValue=="7565"){    
@@ -279,7 +284,7 @@ function totalcost(){
              Total2.value = (parseInt(Cost2.value) + parseInt(Inst2.value)).toFixed(2);
             }           
 }
-
+//Function to call the right calculation function depending of the type of building
 $("input").on('change keyup click',function () {
     var TypeValue = $("#Building option:selected").val();
     if(TypeValue == "Commercial"){
