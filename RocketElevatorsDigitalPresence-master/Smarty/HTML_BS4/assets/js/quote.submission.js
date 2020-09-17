@@ -259,7 +259,7 @@ function totalcost(){
             // Corporate and Hybrid
             var Co2 = (Reco2.value * prodValue).toFixed(2);
             Cost2.value = "$" + Co2
-            var In2 = (Co2 * 0.16).toFixed(2);
+            var In2 = (Co2 * 0.1).toFixed(2);
             Inst2.value = "$" + In2 
             var To2 = (parseInt(Co2) + parseInt(In2)).toFixed(2);
             Total2.value = "$" + To2
@@ -275,14 +275,14 @@ function totalcost(){
             //Commerical
             var Co1 = (Reco1.value * prodValue).toFixed(2);
             Cost1.value = "$" + Co1;
-            var In1 = (Co1 * 0.1).toFixed(2);
+            var In1 = (Co1 * 0.13).toFixed(2);
             Inst1.value = "$" + In1;
             var To1 = (parseInt(Co1) + parseInt(In1)).toFixed(2); 
             Total1.value = "$" + To1;
             // Corporate and Hybrid
             var Co2 = (Reco2.value * prodValue).toFixed(2);
             Cost2.value = "$" + Co2
-            var In2 = (Co2 * 0.16).toFixed(2);
+            var In2 = (Co2 * 0.13).toFixed(2);
             Inst2.value = "$" + In2 
             var To2 = (parseInt(Co2) + parseInt(In2)).toFixed(2);
             Total2.value = "$" + To2
@@ -298,7 +298,7 @@ function totalcost(){
             //Commercial
             var Co1 = (Reco1.value * prodValue).toFixed(2);
             Cost1.value = "$" + Co1;
-            var In1 = (Co1 * 0.1).toFixed(2);
+            var In1 = (Co1 * 0.16).toFixed(2);
             Inst1.value = "$" + In1;
             var To1 = (parseInt(Co1) + parseInt(In1)).toFixed(2); 
             Total1.value = "$" + To1;
